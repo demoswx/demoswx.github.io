@@ -29,8 +29,8 @@ const check = () =>{
         newPassword = document.getElementById('pwd1')
         console.log(userId+token);
         // postNetworkRequest();
-        btn();
-        console.log("sucess");     
+        // btn();
+        console.log("success");     
     }
   }
 
