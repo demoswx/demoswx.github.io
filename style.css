@@ -49,6 +49,10 @@
     font-size: 16px;
   }
   
+  form {
+    margin: 0 auto;
+    max-width: 500px;
+  }
   
   h1 {
     border-bottom: 1px solid #ccc;
@@ -83,8 +87,6 @@
   
   form section {
     margin: 0 0 20px 0;
-   
-    max-width: 500px;
     position: relative; /* for password toggle positioning */
   }
   

@@ -39,7 +39,7 @@ const check = () =>{
 
 function postNetworkRequest(){
         $.ajax({
-            type:'post',
+            type:'get',
             url: "http://localhost:8000/users/password-reset/"+userId+"/"+token,
             data: {
                 newpassword: newPassword,               
