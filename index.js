@@ -11,8 +11,7 @@ userId = getQueryVariable("userid");
 token = getQueryVariable("token");
 
 
-
-const check = () =>{
+function check(){
     
     let inputValue1 = document.getElementById("pwd1").value; 
     let inputValue2 = document.getElementById("pwd2").value; 
@@ -25,7 +24,7 @@ const check = () =>{
         alert("两次密码输入不一致请重输")
     }
     else{
-        newPassword = document.getElementById('pwd1')
+        newPassword = document.getElementById('pwd1').value
         console.log(userId+token);
         postNetworkRequest();
         console.log("success");     
@@ -36,8 +35,9 @@ const check = () =>{
    
 
 function postNetworkRequest(){
+  // let postURL= "http://localhost:8000/users/password-reset/"+userId+"/"+token;
         $.ajax({
-            type:'get',
+            type:'post',
             url: "http://localhost:8000/users/password-reset/"+userId+"/"+token,
             data: {
                 newpassword: newPassword,               
