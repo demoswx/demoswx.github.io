@@ -5,10 +5,7 @@ var newPassword='';
 
 
 
-let passwordinput1=document.getElementById("pwd1").value
-let passwordinput2=document.getElementById("pwd2").value
-userId = getQueryVariable("userid");
-token = getQueryVariable("token");
+
 function check(){
     let inputValue1 = document.getElementById("pwd1").value; 
     let inputValue2 = document.getElementById("pwd2").value; 
@@ -20,7 +17,9 @@ function check(){
         alert("两次密码输入不一致请重输")
     }
     else{
-        newPassword = document.getElementById('pwd1').value
+      userId = getQueryVariable("userid");
+      token = getQueryVariable("token");
+      newPassword = document.getElementById('pwd1').value
         console.log(2)
         console.log(userId+token);
         postNetworkRequest();
