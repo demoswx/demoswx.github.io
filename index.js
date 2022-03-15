@@ -27,27 +27,30 @@ const check = () =>{
     else{
         newPassword = document.getElementById('pwd1')
         console.log(userId+token);
-        postNetworkRequest();
-        // btn();
-        console.log("success");     
-    }
-  }
-const result=document.getElementById("submit")
-result.addEventListener("click",function(){
-  const xhr=new XMLHttpRequest();
-  xhr.open('POST',"http://localhost:8000/users/password-reset/"+userId+"/"+token)
-  xhr.send("newpassword");
-  xhr.onreadystatechange=function(){
-    if(xhr.readyState==4){
-      if(xhr.status>=200&&xhr.status<300){
+        const result=document.getElementById("submit")
+        result.addEventListener("click",function(){
+        const xhr=new XMLHttpRequest();
+        xhr.open('POST',"http://localhost:8000/users/password-reset/"+userId+"/"+token)
+        xhr.send("newPassword");
+        xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+        if(xhr.status>=200&&xhr.status<300){
         console.log(xhr.status)
-      }
-    }
+        }
+          }
     else
     console.log("fail");
   }
 
 })
+
+
+
+        
+        console.log("success");     
+    }
+  }
+
   
    
   
