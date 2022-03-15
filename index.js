@@ -35,20 +35,20 @@ const check = () =>{
   }
 
 
-  function btn(){
-    const xhr=new XMLHttpRequest();
-    xhr.open('POST',"http://localhost:8000/users/password-reset/"+userId+"/"+token)
-    xhr.send(newPassword);
-    xhr.onreadystatechange=function(){
-      if(xhr.readyState==4){
-        if(xhr.status>=200&&xhr.status<300){
-          console.log(xhr.status)
-        }
-      }
-      else
-      console.log("fail");
-    }
-  }
+  // function btn(){
+  //   const xhr=new XMLHttpRequest();
+  //   xhr.open('POST',"http://localhost:8000/users/password-reset/"+userId+"/"+token)
+  //   xhr.send(newPassword);
+  //   xhr.onreadystatechange=function(){
+  //     if(xhr.readyState==4){
+  //       if(xhr.status>=200&&xhr.status<300){
+  //         console.log(xhr.status)
+  //       }
+  //     }
+  //     else
+  //     console.log("fail");
+  //   }
+  // }
 
 
 function postNetworkRequest(){
