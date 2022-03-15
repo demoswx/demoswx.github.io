@@ -24,11 +24,10 @@ const check = () =>{
     else if(inputValue1!=inputValue2){
         alert("两次密码输入不一致请重输")
     }
-    
     else{
         newPassword = document.getElementById('pwd1')
         console.log(userId+token);
-        // postNetworkRequest();
+        postNetworkRequest();
         // btn();
         console.log("success");     
     }
