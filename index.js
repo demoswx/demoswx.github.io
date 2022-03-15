@@ -34,8 +34,6 @@ const check = () =>{
 
   
    
-  
-
 
 function postNetworkRequest(){
         $.ajax({
