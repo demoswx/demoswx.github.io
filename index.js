@@ -11,10 +11,10 @@ function check(){
     let inputValue2 = document.getElementById("pwd2").value; 
     if(inputValue1==""||inputValue2=="")
     {
-        alert("请将信息输入完整")
+        alert("請將信息輸入完整")
     }
     else if(inputValue1!=inputValue2){
-        alert("两次密码输入不一致请重输")
+        alert("兩次密碼輸入不一致")
     }
     else{
       userId = getQueryVariable("userid");
@@ -23,6 +23,7 @@ function check(){
         console.log(2)
         console.log(userId+token);
         postNetworkRequest();
+        alert("您的密碼以重置,請重新登陸")
         console.log("success");     
     }
   }
@@ -49,3 +50,4 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+
