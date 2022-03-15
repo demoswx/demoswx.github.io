@@ -7,6 +7,8 @@ var newPassword='';
 
 let passwordinput1=document.getElementById("pwd1").value
 let passwordinput2=document.getElementById("pwd2").value
+userId = getQueryVariable("userid");
+token = getQueryVariable("token");
 
 
 
@@ -24,34 +26,38 @@ const check = () =>{
     }
     
     else{
-      newPassword = document.getElementById('pwd1')
-    //   location.href="success.html"
-        userId = getQueryVariable("userid");
-        token = getQueryVariable("token");
+        newPassword = document.getElementById('pwd1')
+        console.log(userId+token);
         postNetworkRequest();
-        console.log("sucess");
-        
-        
+        console.log("sucess");     
     }
   }
 
- 
-    
- 
 
-
+  function btn(){
+    const xhr=new XMLHttpRequest();
+    xhr.open('POST',"http://localhost:8000/users/password-reset/"+userId+"/"+token)
+    xhr.send(newPassword);
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState==4){
+        if(xhr.status>=200&&xhr.status<300){
+          console.log(xhr.status)
+        }
+      }
+      else
+      console.log("fail");
+    }
+  }
 
 
 function postNetworkRequest(){
         $.ajax({
+            type:'post',
             url: "http://localhost:8000/users/password-reset/"+userId+"/"+token,
             data: {
                 newpassword: newPassword,
-            },
-            success: function( result ) {
-              $( "#TipArea" ).html( "<strong>" + result + "</strong> degrees" );
-              
-            }
+              },
+            
           });
 }
 
