@@ -28,16 +28,10 @@ const check = () =>{
         newPassword = document.getElementById('pwd1')
         console.log(userId+token);
         postNetworkRequest();
-        // btn();
         console.log("success");     
     }
   }
 
-const result=document.getElementById("submit")
-result.addEventListener("click",function(){
-  
-
-})
   
    
   
