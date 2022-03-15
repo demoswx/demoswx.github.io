@@ -35,7 +35,6 @@ function check(){
    
 
 function postNetworkRequest(){
-  // let postURL= "http://localhost:8000/users/password-reset/"+userId+"/"+token;
         $.ajax({
             type:'post',
             url: "http://localhost:8000/users/password-reset/"+userId+"/"+token,
